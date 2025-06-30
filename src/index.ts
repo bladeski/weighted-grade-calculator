@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetValue = parseInt((document.getElementById('TargetMark') as HTMLInputElement)!.value) || 0;
 
     calculateTargetMarks(targetValue, totalGrade).forEach((target, index) => {
-      items[index].setAttribute('data-target-mark', target?.toString() || '');
+      items[index].setAttribute('data-target-mark', target?.toFixed(2).toString() || '');
     });
   }
 
