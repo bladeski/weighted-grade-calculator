@@ -32,3 +32,4 @@ coverage/
 *.log
 *.tmp
 *.swp
+.parcel-cache/
