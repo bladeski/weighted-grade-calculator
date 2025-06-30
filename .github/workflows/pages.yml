@@ -43,6 +43,7 @@ jobs:
         with:
           tag-prefix: 'v'
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
+          skip-tag: true  # Add this option to skip creating a tag if it already exists.
       
       - name: Setup Pages
         uses: actions/configure-pages@v2
