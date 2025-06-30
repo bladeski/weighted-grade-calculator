@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# Parcel cache
+.cache/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# TypeScript build output
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+
+# Coverage
+coverage/
+
+# Misc
+*.log
+*.tmp
+*.swp

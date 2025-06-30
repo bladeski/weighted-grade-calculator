@@ -1,0 +1,24 @@
+{
+  "name": "mark-calculator",
+  "version": "1.0.0",
+  "description": "A calculator for working out your total marks from a percentage.",
+  "author": "Jonathan Blades",
+  "license": "MIT",
+  "dependencies": {
+    "jest-environment-jsdom": "^30.0.2",
+    "parcel": "^2.15.4",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "2.15.4",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.3",
+    "jsdom": "^26.1.0",
+    "ts-jest": "^29.4.0"
+  },
+  "scripts": {
+    "start": "parcel src/index.pug --open",
+    "build": "parcel build src/index.pug --public-url ./",
+    "test": "jest"
+  }
+}

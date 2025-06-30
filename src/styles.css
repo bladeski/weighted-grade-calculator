@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --color-primary: #3a0ca3;
+  --color-secondary: #7209b7;
+  --color-bg-gradient-start: #f8fafc;
+  --color-bg-gradient-end: #e0e7ff;
+  --color-bg-disabled-start: #b6b6e5;
+  --color-bg-disabled-end: #d3d3f7;
+  --color-text-main: #22223b;
+  --color-text-primary: #3a0ca3;
+  --color-text-secondary: #7209b7;
+  --color-shadow: rgba(58,12,163,0.08);
+  --color-shadow-hover: rgba(58,12,163,0.18);
+  --color-shadow-active: rgba(58,12,163,0.22);
+
+  /* RAG (Red-Amber-Green) status colors */
+  --color-rag-red: #e63946;
+  --color-rag-amber: #ffb703;
+  --color-rag-green: #38b000;
+}
+
+@property --rotation{
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 90deg;
+}
+
+/* Modern, clean, and colorful calculator styles */
+html {
+  margin: 0;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  background: linear-gradient(120deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  max-width: 1200px;
+  color: var(--color-text-main);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-primary);
+}
+
+form {
+  width: 100%;
+}
+
+#CalculatorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  > *{
+    position: relative;
+
+    &:not([data-target-mark=""])::after {
+      content: 'Target: ' attr(data-target-mark) '%';
+      font-size: 0.8rem;
+      background-color: var(--color-primary);
+      color: var(--color-bg-gradient-start);
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.3rem;
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+}
+
+button {
+  background: linear-gradient(var(--rotation), var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 0.7rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 var(--color-shadow);
+  transition: --rotation 0.5s, transform 0.1s, box-shadow 0.15s;
+
+  &:disabled {
+    background: linear-gradient(90deg, var(--color-bg-disabled-start) 0%, var(--color-bg-disabled-end) 100%);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+button:not(:disabled):hover {
+  /* background: linear-gradient(270deg, var(--color-primary) 0%, var(--color-secondary) 100%); */
+  --rotation: 270deg;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 20px 0 var(--color-shadow-hover);
+}
+
+button:not(:disabled):active {
+  box-shadow: 0 2px 4px 0 var(--color-shadow-active);
+  transform: translateY(1px) scale(0.98);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-primary, #3a0ca3);
+  font-weight: 500;
+
+  padding: 0.4rem 0.7rem;
+  border: 1.5px solid var(--color-bg-disabled-start, #b6b6e5);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s;
+
+  &:has(input:focus) {
+    border-color: var(--color-primary, #3a0ca3);
+  }
+
+  &:has(input:not(:placeholder-shown)) span {
+    opacity: 0.75;
+  }
+
+  &:has(input:focus) span {
+    opacity: 1;
+  }
+
+  &:has(input:invalid) {
+    border-color: var(--color-rag-red, #e63946);
+  }
+
+  span {
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+  
+  input {
+    font-family: "Quicksand", sans-serif;
+    color: var(--color-primary, #3a0ca3);
+    border: none;
+    font-size: 1rem;
+    background: transparent;
+  }
+  input:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+#AddItem {
+  float: right;
+  margin: 0;
+}
+
+#TotalMarksValue {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}

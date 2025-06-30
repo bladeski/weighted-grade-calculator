@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title Weighted Grade Calculator
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./styles.css")
+  body
+    h1 Weighted Grade Calculator
+    p Calculate your weighted grade from percentages of each assessment.
+    form#CalculatorForm
+      #CalculatorContainer
+        // Calculator items will be added here
+      button(type="button", id="AddItem") Add Item
+    div
+      h2 Total Grade: 
+        span#TotalMarksValue 0
+        span %
+    div.target-mark
+      label
+        span Target (%)
+        input(type="number", id="TargetMark", min="0", max="100", placeholder="e.g. 75" required value="40")
+    include CalculatorItem/CalculatorItem.pug
+    script(type="module", src="./index.ts")
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete")

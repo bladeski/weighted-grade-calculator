@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:host {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+div {
+  background: var(--color-bg-gradient-end, #f1f3f8);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 var(--color-shadow, rgba(58,12,163,0.04));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-primary, #3a0ca3);
+  font-weight: 500;
+
+  padding: 0.4rem 0.7rem;
+  border: 1.5px solid var(--color-bg-disabled-start, #b6b6e5);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s;
+
+  &:has(input:focus) {
+    border-color: var(--color-primary, #3a0ca3);
+  }
+
+  &:has(input:not(:placeholder-shown)) span {
+    opacity: 0.75;
+  }
+
+  &:has(input:focus) span {
+    opacity: 1;
+  }
+
+  &:has(input:invalid) {
+    border-color: var(--color-rag-red, #e63946);
+  }
+
+  span {
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+  
+  input {
+    font-family: "Quicksand", sans-serif;
+    color: var(--color-primary, #3a0ca3);
+    border: none;
+    font-size: 1rem;
+    background: transparent;
+  }
+  input:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.remove-item {
+  background: transparent;
+  border: none;
+  color: var(--color-primary, #3a0ca3);
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  border-radius: 50%;
+  transition: 
+    color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-item:hover {
+  background: var(--color-shadow, rgba(58, 12, 163, 0.08));
+  color: var(--color-secondary, #7209b7);
+}
