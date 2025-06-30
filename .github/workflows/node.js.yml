@@ -48,14 +48,14 @@ jobs:
         uses: actions/configure-pages@v2
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           # Upload entire repository
-          path: './dist/production'
+          path: './dist/production'      
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4.0.5
 
       - name: Create Release
         uses: ncipollo/release-action@v1.11.1
