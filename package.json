@@ -1,6 +1,6 @@
 {
   "name": "mark-calculator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A calculator for working out your total marks from a percentage.",
   "author": "Jonathan Blades",
   "license": "MIT",
