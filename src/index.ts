@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     addItem();
   });
 
+  document.getElementById('HelpButton')?.addEventListener('click', () => {
+    const helpContainer = document.getElementById('HelpContainer') as HTMLDivElement;
+    helpContainer.classList.toggle('open');
+  });
+
   // Listen for value-changed events and recalculate total
   calculatorContainer.addEventListener('value-changed', () => {
     updateTotal();

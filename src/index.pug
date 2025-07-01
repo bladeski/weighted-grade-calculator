@@ -14,7 +14,7 @@ html
     form#CalculatorForm
       #CalculatorContainer
         // Calculator items will be added here
-      button(type="button", id="AddItem") Add Item
+      button(type="button", id="AddItem", class="button") Add Item
     div
       h2 Total Grade: 
         span#TotalMarksValue 0
@@ -23,6 +23,19 @@ html
       label
         span Target (%)
         input(type="number", id="TargetMark", min="0", max="100", placeholder="e.g. 75" required value="40")
+    div#HelpContainer
+      div.button-wrapper
+        button(type="button", id="HelpButton", class="icon-button")
+          span.material-symbols-outlined help
+      div.contents
+        h2 Help 
+        p Do you need help? You've come to the right place! This calculator helps you determine your weighted grade based on the percentages of each assessment.
+        p Enter the percentage for each assessment in the "Weight" field, and the corresponding mark into the respective "Mark" field. The "Assessment/Exam name" field is optional but can help you keep track of different assessments.
+        p The calculator will automatically compute the total grade based on the entered values. You can add multiple assessments by clicking the "Add Item" button.
+        p If you need to remove an assessment, click the delete icon next to it.
+        p If you want to set a target mark, or goal, enter the desired percentage in the "Target" field. The calculator will show you how much you need to score on the remaining assessments to achieve that target.
+        p If you have any questions or need further assistance, feel free to reach out for help, oh, and good luck with those assessments!
+
     include CalculatorItem/CalculatorItem.pug
     script(type="module", src="./index.ts")
-  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete")
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete,help")

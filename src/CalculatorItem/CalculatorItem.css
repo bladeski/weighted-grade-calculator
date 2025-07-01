@@ -1,46 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 :host {
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--font-family, "Quicksand");
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular, 400);
+  font-size: var(--font-size-medium, 20px);
   font-style: normal;
   display: block;
-  margin-bottom: 0.5rem;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+  margin-bottom: var(--margin-small, 0.5rem);
 }
 
 div {
-  border-radius: 3rem;
-  box-shadow: 0 2px 8px 0 var(--color-shadow,#3a0ca30a), inset 1px 1px 0 var(--color-white, #f1f3f8), inset 0 0 5px var(--color-white, #f1f3f8);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--glass-shadow);
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
+  gap: var(--gap-medium);
+  padding: var(--padding-medium);
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(1rem) saturate(1) opacity(0.6) brightness(1);
+  background-color: var(--glass-color-bg, rgba(255, 255, 255, 0.2));
+  backdrop-filter: var(--glass-blur);
 }
 
 label {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1rem;
+  gap: var(--gap-small);
+  font-size: var(--font-size-medium, 1rem);
   color: var(--color-primary, #3a0ca3);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 
-  padding: 0.4rem 0.7rem;
+  padding: var(--padding-small) var(--padding-medium);
   border: 1.5px solid var(--color-bg-disabled-start, #b6b6e5);
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  border-radius: var(--border-radius-small, 0.5rem);
   background-color: var(--color-white, #fff);
   transition: border 0.2s;
 
@@ -70,7 +63,7 @@ label {
     font-family: "Quicksand", sans-serif;
     color: var(--color-primary, #3a0ca3);
     border: none;
-    font-size: 1rem;
+    font-size: var(--font-size-medium, 1rem);
     background: transparent;
   }
   input:focus {
@@ -84,21 +77,27 @@ label {
   border: none;
   color: var(--color-primary, #3a0ca3);
   cursor: pointer;
-  font-size: 1.5rem;
-  padding: 0.2rem;
+  padding: var(--padding-small);
   border-radius: 50%;
   transition: 
     color 0.2s,
     background 0.2s,
     box-shadow 0.2s;
-  width: 2.2rem;
-  height: 2.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.remove-item:hover {
-  background: var(--color-shadow, rgba(58, 12, 163, 0.08));
-  color: var(--color-secondary, #7209b7);
+  &:hover {
+    background: var(--color-shadow, rgba(58, 12, 163, 0.08));
+    color: var(--color-secondary, #7209b7);
+  }
+
+  .material-symbols-outlined {
+    font-size: var(--font-size-large, 2rem);
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
 }
