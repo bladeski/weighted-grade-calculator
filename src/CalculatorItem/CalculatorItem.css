@@ -18,15 +18,15 @@
 }
 
 div {
-  background: var(--color-bg-gradient-end, #f1f3f8);
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px 0 var(--color-shadow, rgba(58,12,163,0.04));
+  border-radius: 3rem;
+  box-shadow: 0 2px 8px 0 var(--color-shadow,#3a0ca30a), inset 1px 1px 0 var(--color-white, #f1f3f8), inset 0 0 5px var(--color-white, #f1f3f8);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(1rem) saturate(1) opacity(0.6) brightness(1);
 }
 
 label {
@@ -41,10 +41,11 @@ label {
   border: 1.5px solid var(--color-bg-disabled-start, #b6b6e5);
   border-radius: 0.5rem;
   font-size: 1rem;
-  background: #fff;
+  background-color: var(--color-white, #fff);
   transition: border 0.2s;
 
-  &:has(input:focus) {
+  &:has(input:focus),
+  &:hover {
     border-color: var(--color-primary, #3a0ca3);
   }
 
