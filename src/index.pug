@@ -26,7 +26,8 @@ html
     div#HelpContainer
       div.button-wrapper
         button(type="button", id="HelpButton", class="icon-button")
-          span.material-symbols-outlined help
+          span.help.material-symbols-outlined help
+          span.close.material-symbols-outlined cancel
       div.contents
         h2 Help 
         p Do you need help? You've come to the right place! This calculator helps you determine your weighted grade based on the percentages of each assessment.
@@ -38,4 +39,4 @@ html
 
     include CalculatorItem/CalculatorItem.pug
     script(type="module", src="./index.ts")
-  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete,help")
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cancel,delete,help")
